@@ -4,8 +4,7 @@ import background3 from './public/background-3.jpg';
 
 export const bgImages = [background1, background2, background3];
 
-export const url =
-  'https://restaurant-reservation-or2r.onrender.com/reservation';
+export const url = 'https://restaurant-reservation-or2r.onrender.com';
 
 export const links = [
   {
