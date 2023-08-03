@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: 'http://localhost:5173',
+    origin: 'https://main--splendid-paprenjak-6c0360.netlify.app',
   })
 );
 app.use(cookieParser());
