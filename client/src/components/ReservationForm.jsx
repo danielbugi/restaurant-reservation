@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { styled } from 'styled-components';
 import SuccessMsg from './SuccessMsg';
 import { useNavigate } from 'react-router-dom';
+import { url } from '../data';
 
 const ReservationForm = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const ReservationForm = () => {
 
     console.log(formData);
 
-    await fetch('http://localhost:3000/reservation', {
+    await fetch(`${url}/reservation`, {
       method: 'POST',
       body: JSON.stringify(updatedFormData),
       headers: {
