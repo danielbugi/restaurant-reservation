@@ -26,8 +26,6 @@ const ReservationForm = () => {
     const time = `${formData.timeHour}:${formData.timeMinute}`;
     const updatedFormData = { ...formData, time };
 
-    console.log(formData);
-
     await fetch(`${url}/reservation`, {
       method: 'POST',
       body: JSON.stringify(updatedFormData),
