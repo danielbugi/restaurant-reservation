@@ -40,5 +40,10 @@ const Wrapper = styled.section`
       }
     }
   }
+  @media screen and (max-width: 620px) {
+    main {
+      width: 90vw;
+    }
+  }
 `;
 export default ReservationPage;

@@ -1,17 +1,17 @@
 import Header from '../components/Header';
 import hamburger from '../public/hamburger.svg';
 import styled from 'styled-components';
-import { FaBars } from 'react-icons/fa';
+
 import { bgImages } from '../data';
 import { useEffect, useState } from 'react';
-import { useAppContext } from '../context/AppContext';
+
 import { Link } from 'react-router-dom';
+import SidebarButton from '../components/SidebarButton';
 
 const HomePage = () => {
   // eslint-disable-next-line no-unused-vars
   const [backgrounds, setBackgrounds] = useState(bgImages);
   const [currentBg, setCurrentBg] = useState(0);
-  const { openSidebar } = useAppContext();
 
   const changeBg = () => {
     setCurrentBg((oldBg) => {
@@ -27,13 +27,13 @@ const HomePage = () => {
     return () => {
       clearInterval(sliderId);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentBg]);
 
   return (
     <Wrapper>
-      <div className="sidebar-btn-con">
-        <FaBars className="sidebar-btn" onClick={openSidebar} />
-      </div>
+      <SidebarButton />
+
       <div className="background-container">
         {bgImages.map((item, i) => {
           return (
@@ -86,9 +86,6 @@ const Wrapper = styled.section`
     }
   }
 
-  .sidebar-btn {
-    display: none;
-  }
   main {
     background: rgba(112, 112, 112, 0.9);
     display: block;
@@ -97,11 +94,8 @@ const Wrapper = styled.section`
     text-align: center;
     border-radius: 10px;
   }
-  main .img-con {
-    img {
-      opacity: 0.8;
-      height: 15rem;
-    }
+  .img-con img {
+    height: 15rem;
   }
 
   br {
@@ -133,17 +127,13 @@ const Wrapper = styled.section`
     font-weight: bold;
   }
   @media screen and (max-width: 620px) {
-    .sidebar-btn-con {
-      display: block;
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      z-index: 998;
-      .sidebar-btn {
-        display: block;
-        font-size: 4rem;
-        color: #fff;
-        cursor: pointer;
+    .img-con img {
+      height: 8rem;
+    }
+    main {
+      width: 90vw;
+      h1 {
+        font-size: 1.8rem;
       }
     }
   }

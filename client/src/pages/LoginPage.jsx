@@ -21,6 +21,7 @@ const LoginPage = () => {
 
     if (!response.ok) {
       alert('password or username is incorrect');
+      console.log(response);
     } else {
       response.json().then((user) => {
         setUserInfo(user);

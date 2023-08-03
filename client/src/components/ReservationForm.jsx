@@ -201,6 +201,17 @@ const Form = styled.form`
     border-radius: 5px;
     margin-right: 5px;
   }
+
+  @media screen and (max-width: 680px) {
+    display: flex;
+    flex-direction: column;
+    .form-con-1 {
+      margin-bottom: 2rem;
+    }
+    .form-con-2 {
+      align-items: start;
+    }
+  }
 `;
 
 export default ReservationForm;

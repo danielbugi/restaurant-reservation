@@ -13,7 +13,12 @@ const app = express();
 dotenv.config();
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors({ credentials: true, origin: 'http://localhost:5173' }));
+app.use(
+  cors({
+    credentials: true,
+    origin: 'http://localhost:5173',
+  })
+);
 app.use(cookieParser());
 
 const DB = process.env.DB_URL.replace('<PASSWORD>', process.env.DB_PASSWORD);

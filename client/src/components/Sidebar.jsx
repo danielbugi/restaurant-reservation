@@ -31,7 +31,12 @@ const Sidebar = () => {
               </Link>
             );
           })}
-          {userInfo && <Link to={'/dashboard'}>Dashboard</Link>}
+          {userInfo && (
+            <>
+              <Link to={'/dashboard'}>Dashboard</Link>
+              <a href="/">Logout</a>
+            </>
+          )}
         </ul>
       </div>
     </Wrapper>

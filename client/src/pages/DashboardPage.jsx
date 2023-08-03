@@ -42,7 +42,7 @@ const DashboardPage = () => {
                   <span>{i + 1}</span>
                   <span>{name}</span>
                   <span>{phone}</span>
-                  <span>{date}</span>
+                  <span>{date.split('T')[0]}</span>
                   <span>{time}</span>
                   <span>{people}</span>
                 </li>
